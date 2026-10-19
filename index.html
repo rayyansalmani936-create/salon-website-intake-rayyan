@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Salon Website Discovery</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px 14px;
+            background: #f6f0eb;
+            color: #342622;
+            font: 16px/1.5 Arial, sans-serif;
+        }
+
+        main {
+            max-width: 820px;
+            margin: auto;
+            padding: 28px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px #34262212;
+        }
+
+        .eyebrow {
+            color: #9b624b;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+        }
+
+        h1 {
+            margin: 5px 0 8px;
+            font-size: 30px;
+        }
+
+        h2 {
+            font-size: 19px;
+        }
+
+        .intro,
+        .hint {
+            color: #766963;
+        }
+
+        .intro {
+            margin: 0 0 24px;
+        }
+
+        fieldset {
+            margin: 20px 0;
+            padding: 18px;
+            border: 1px solid #e1d6ce;
+            border-radius: 12px;
+        }
+
+        legend {
+            padding: 0 8px;
+            font-weight: bold;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cfc2b9;
+            border-radius: 8px;
+            background: #fff;
+            color: #342622;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            width: auto;
+            margin: 4px 0 0;
+        }
+
+        .choices {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 16px;
+        }
+
+        .choices label,
+        .consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            font-weight: normal;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        .field {
+            margin-bottom: 15px;
+        }
+
+        .hint {
+            margin: 6px 0 0;
+            font-size: 13px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: 0;
+            border-radius: 9px;
+            background: #9b624b;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #774832;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            .grid,
+            .choices {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="eyebrow">SALON WEBSITE DISCOVERY</div>
+        <h1>Tell us about your salon</h1>
+        <p class="intro">
+            Your answers will help plan a website that fits your salon, services and customers.
+            You can skip anything you have not decided yet.
+        </p>
+
+        <form id="salonForm">
+            <fieldset>
+                <legend>1. Salon and contact details</legend>
+
+                <div class="grid">
+                    <div class="field">
+                        <label for="salonName">Salon / business name *</label>
+                        <input id="salonName" name="Salon name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="contactName">Your name *</label>
+                        <input id="contactName" name="Contact person" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email address</label>
+                        <input id="email" type="email" name="Email">
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone / WhatsApp number</label>
+                        <input id="phone" type="tel" name="Phone number">
+                    </div>
+
+                    <div class="field">
+                        <label for="location">Salon address and city</label>
+                        <input id="location" name="Salon address and city">
+                    </div>
+
+                    <div class="field">
+                        <label for="hours">Opening days and hours</label>
+                        <input id="hours" name="Opening hours">
+                    </div>
+
+                    <div class="field full">
+                        <label for="existingWebsite">Current website or domain, if any</label>
+                        <input id="existingWebsite" name="Current website or domain">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>2. Your business and services</legend>
+
+                <div class="field">
+                    <label for="salonStory">Tell us about your salon and what makes it special</label>
+                    <textarea id="salonStory" name="About the salon"></textarea>
+                </div>
+
+                <div class="grid">
+                    <div class="field">
+                        <label for="years">How long has the salon been open?</label>
+                        <input id="years" name="Years in business">
+                    </div>
+
+                    <div class="field">
+                        <label for="branches">How many locations do you have?</label>
+                        <input id="branches" name="Number of locations">
+                    </div>
+
+                    <div class="field full">
+                        <label for="services">List your services, prices and appointment duration</label>
+                        <textarea id="services" name="Services, prices and duration"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="popularServices">Which 3 services should we highlight most?</label>
+                        <textarea id="popularServices" name="Top services"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="audience">Who are your ideal customers?</label>
+                        <textarea id="audience" name="Ideal customers"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>3. Website goals</legend>
+                <p class="hint">Choose all that match your goals.</p>
+
+                <div class="choices">
+                    <label><input type="checkbox" name="Website goals" value="Get more bookings"> Get more
+                        bookings</label>
+                    <label><input type="checkbox" name="Website goals" value="Show services and prices"> Show services
+                        and prices</label>
+                    <label><input type="checkbox" name="Website goals" value="Show salon photos"> Show salon
+                        photos</label>
+                    <label><input type="checkbox" name="Website goals" value="Promote offers"> Promote offers</label>
+                    <label><input type="checkbox" name="Website goals" value="Build trust with reviews"> Build trust
+                        with reviews</label>
+                    <label><input type="checkbox" name="Website goals" value="Sell products or gift cards"> Sell
+                        products or gift cards</label>
+                    <label><input type="checkbox" name="Website goals" value="Explain salon and team"> Explain the salon
+                        and team</label>
+                    <label><input type="checkbox" name="Website goals" value="Other"> Other</label>
+                </div>
+
+                <div class="field" style="margin-top:16px">
+                    <label for="goalDetails">What is the most important result you want from the website?</label>
+                    <textarea id="goalDetails" name="Most important website result"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>4. Pages and features</legend>
+
+                <p class="hint">Select the pages and features you may need.</p>
+                <div class="choices">
+                    <label><input type="checkbox" name="Website pages" value="Home"> Home</label>
+                    <label><input type="checkbox" name="Website pages" value="About"> About the salon</label>
+                    <label><input type="checkbox" name="Website pages" value="Services and pricing"> Services and
+                        pricing</label>
+                    <label><input type="checkbox" name="Website pages" value="Gallery"> Photo gallery</label>
+                    <label><input type="checkbox" name="Website pages" value="Team"> Team</label>
+                    <label><input type="checkbox" name="Website pages" value="Booking"> Booking</label>
+                    <label><input type="checkbox" name="Website pages" value="Reviews"> Reviews</label>
+                    <label><input type="checkbox" name="Website pages" value="Offers"> Offers</label>
+                    <label><input type="checkbox" name="Website pages" value="FAQ"> FAQ</label>
+                    <label><input type="checkbox" name="Website pages" value="Contact"> Contact and location</label>
+                </div>
+
+                <div class="choices" style="margin-top:18px">
+                    <label><input type="checkbox" name="Website features" value="WhatsApp button"> WhatsApp
+                        button</label>
+                    <label><input type="checkbox" name="Website features" value="Google Maps"> Google Maps</label>
+                    <label><input type="checkbox" name="Website features" value="Online booking"> Online booking</label>
+                    <label><input type="checkbox" name="Website features" value="Contact form"> Contact form</label>
+                    <label><input type="checkbox" name="Website features" value="Gift cards"> Gift cards</label>
+                    <label><input type="checkbox" name="Website features" value="Online payments"> Online
+                        payments</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>5. Brand and design</legend>
+
+                <div class="field">
+                    <label>Choose the style that feels right</label>
+                    <div class="choices">
+                        <label><input type="checkbox" name="Design style" value="Luxury"> Luxury</label>
+                        <label><input type="checkbox" name="Design style" value="Modern"> Modern</label>
+                        <label><input type="checkbox" name="Design style" value="Warm and welcoming"> Warm and
+                            welcoming</label>
+                        <label><input type="checkbox" name="Design style" value="Clean and minimal"> Clean and
+                            minimal</label>
+                        <label><input type="checkbox" name="Design style" value="Bold and glamorous"> Bold and
+                            glamorous</label>
+                        <label><input type="checkbox" name="Design style" value="Natural"> Natural</label>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div class="field">
+                        <label for="colours">Colours you like or want to avoid</label>
+                        <textarea id="colours" name="Preferred and avoided colours"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="references">Links to websites you like, and what you like about them</label>
+                        <textarea id="references" name="Reference websites"></textarea>
+                    </div>
+
+                    <div class="field full">
+                        <label for="designNotes">How should customers feel when they first see your website?</label>
+                        <textarea id="designNotes" name="Desired first impression"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>6. Booking and salon policies</legend>
+
+                <div class="grid">
+                    <div class="field">
+                        <label for="bookingSystem">Do you use a booking app? Add its name or link</label>
+                        <input id="bookingSystem" name="Booking app and link">
+                    </div>
+
+                    <div class="field">
+                        <label for="bookingMethod">How should customers book?</label>
+                        <select id="bookingMethod" name="Preferred booking method">
+                            <option value="">Choose one</option>
+                            <option>Online booking</option>
+                            <option>WhatsApp</option>
+                            <option>Phone call</option>
+                            <option>More than one of these</option>
+                            <option>Not decided yet</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="deposit">Do customers need to pay a deposit?</label>
+                        <input id="deposit" name="Deposit policy">
+                    </div>
+
+                    <div class="field">
+                        <label for="cancellation">Cancellation or late-arrival policy</label>
+                        <input id="cancellation" name="Cancellation and late policy">
+                    </div>
+
+                    <div class="field full">
+                        <label for="otherPolicies">Other customer policies or important instructions</label>
+                        <textarea id="otherPolicies" name="Other salon policies"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>7. Photos, content and social links</legend>
+
+                <div class="choices">
+                    <label><input type="checkbox" name="Ready materials" value="Logo"> Logo</label>
+                    <label><input type="checkbox" name="Ready materials" value="Service photos"> Service photos</label>
+                    <label><input type="checkbox" name="Ready materials" value="Salon photos"> Salon photos</label>
+                    <label><input type="checkbox" name="Ready materials" value="Price list"> Price list</label>
+                    <label><input type="checkbox" name="Ready materials" value="Team photos and bios"> Team photos and
+                        bios</label>
+                    <label><input type="checkbox" name="Ready materials" value="Customer reviews"> Customer
+                        reviews</label>
+                </div>
+
+                <div class="grid" style="margin-top:16px">
+                    <div class="field">
+                        <label for="socialLinks">Instagram, Facebook or other social links</label>
+                        <textarea id="socialLinks" name="Social media links"></textarea>
+                    </div>
+
+                    <div class="field">
+                        <label for="googleProfile">Google Maps or Google Business Profile link</label>
+                        <textarea id="googleProfile" name="Google Business links"></textarea>
+                    </div>
+                </div>
+
+                <p class="hint">You can send your logo, photos and price list in the WhatsApp chat after it opens.</p>
+            </fieldset>
+
+            <fieldset>
+                <legend>8. Project timing and final details</legend>
+
+                <div class="grid">
+                    <div class="field">
+                        <label for="launchDate">When would you ideally like the website ready?</label>
+                        <input id="launchDate" name="Preferred launch date">
+                    </div>
+
+                    <div class="field">
+                        <label for="budget">Approximate budget (optional)</label>
+                        <input id="budget" name="Approximate budget">
+                    </div>
+
+                    <div class="field">
+                        <label for="languages">Website language or languages</label>
+                        <input id="languages" name="Website languages">
+                    </div>
+
+                    <div class="field">
+                        <label for="approver">Who will approve the website?</label>
+                        <input id="approver" name="Website decision maker">
+                    </div>
+
+                    <div class="field full">
+                        <label for="finalNotes">Any other ideas, questions or requirements?</label>
+                        <textarea id="finalNotes" name="Other ideas and requirements"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+
+            <label class="consent">
+                <input type="checkbox" name="Contact permission" value="Yes" required>
+                I agree to be contacted about this website project. *
+            </label>
+
+            <p class="hint">
+                After WhatsApp opens, please check the answers and tap Send. You can attach photos or files in that
+                chat.
+            </p>
+
+            <button type="submit">Send my answers on WhatsApp</button>
+        </form>
+    </main>
+
+    <script>
+        // Replace this with the WhatsApp number that should receive the answers.
+        // Use country code and number only: for India, 91 followed by the 10-digit number.
+        const receivingNumber = "919650394817";
+
+        const form = document.getElementById("salonForm");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            if (!form.reportValidity()) return;
+
+            const answers = new Map();
+
+            for (const [question, answer] of new FormData(form).entries()) {
+                const value = String(answer).trim();
+
+                if (!value) continue;
+
+                if (!answers.has(question)) {
+                    answers.set(question, []);
+                }
+
+                answers.get(question).push(value);
+            }
+
+            let message = "SALON WEBSITE PROJECT BRIEF\n";
+
+            for (const [question, values] of answers) {
+                message += `\n${question}: ${values.join(", ")}`;
+            }
+
+            const whatsappLink =
+                `https://wa.me/${receivingNumber}?text=${encodeURIComponent(message)}`;
+
+            window.location.href = whatsappLink;
+        });
+    </script>
+</body>
+
+</html>
